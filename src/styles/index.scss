@@ -1,0 +1,293 @@
+
+
+@import './config.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font-geo;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.plus {
+    background-color: $color-primary;
+    color: white !important;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: 0.3s;
+    justify-content: center;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.selected-cat-item {
+    background-color: transparent !important;
+    color: $color-primary !important;
+    border: 1px solid $color-primary
+}
+.custom-input {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    padding: 10px 5px;
+    border-radius: 5px;
+    outline: 0;
+    color: white;
+    &::placeholder {
+        color: $color-primary;
+    }
+}
+body {
+    background-color: #242424;
+}
+.dark-overlay {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.upload-button-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#input-primary {
+    background-color: $color-primary;
+}
+.button-save {
+    min-width: 100px;
+    border-radius: 5px !important;
+}
+.upload-button {
+    max-width: 400px;
+    width: 100%;
+    min-height: 300px;
+    border: 5px dotted $color-primary !important;
+    border-radius: 20px !important;
+    background-color: transparent !important;
+    font-weight: bold !important;
+    box-shadow: none !important;
+    letter-spacing: 1px;
+    transition: 0.3s !important;
+    &:hover {
+        background-color: rgba(163, 163, 163, 0.02) !important;
+    }
+    .up-icon {
+        color: $color-primary;
+        opacity: 0.5;
+        transition: 0.3s;
+        font-size: 80px !important;
+    }
+    &:hover .up-icon {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+.c-pink {
+    color: $color-primary;
+}
+.button-primary {
+    background-color: $color-primary;
+    color: white;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: 0.3s;
+    a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+.links {
+    font-size: 14px;
+    color: $color-primary;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.c-white {
+    color: white;
+}
+.remove-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.button-search {
+    max-width: 130px;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 0;
+    background-color: $color-primary;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1)
+    }
+}
+.new-image-input {
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    width: 98%;
+    padding: 15px 5px;
+    font-size: 15px;
+    color: white;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.line {
+    width: 50%;
+    background: rgb(67, 97, 238);
+    background: $line-gradient;
+    // background: linear-gradient(270deg, rgba(67, 97, 238, 0) 0%, rgba(139, 93, 255, 1) 100%);
+    height: 1px;
+    margin-top: 30px;
+}
+
+.cover {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .parent {
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        gap: 30px;
+
+        .child-div {
+            overflow: hidden;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 6px;
+            background-size: cover;
+            min-height: 300px;
+            transition: 2s;
+
+
+            &:hover {
+                z-index: 100;
+                scale: 1.02;
+                cursor: pointer;
+
+                .coverlay {
+                    opacity: 1;
+                }
+
+                .content {
+                    opacity: 1;
+                }
+            }
+
+            .coverlay {
+                transition: 0.3s;
+                opacity: 0;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                // background: rgb(67, 97, 238);
+                background: $gradient-primary;
+            }
+
+            .content {
+                opacity: 0;
+                transition: 0.3s;
+                position: absolute;
+                bottom: 50px;
+                right: 50px;
+            }
+        }
+
+        .div1 {
+            grid-column: span 4 / span 4;
+            grid-row: span 3 / span 3;
+        }
+
+        .div4 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 5;
+        }
+
+        .div5 {
+            grid-column: span 2 / span 2;
+            grid-row: span 6 / span 6;
+            grid-row-start: 4;
+        }
+
+        .div6 {
+            grid-column: span 4 / span 4;
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 4;
+        }
+
+        .div7 {
+            grid-column: span 4 / span 4;
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 7;
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr; // Single column layout
+            grid-template-rows: auto; // Adjust rows automatically based on content
+
+            .child-div {
+                min-height: 300px; // Remove fixed height for better flexibility
+            }
+
+            .div1,
+            .div4,
+            .div5,
+            .div6,
+            .div7 {
+                grid-column: span 1 / span 1; // Full width in single column
+                grid-row: auto; // Let rows stack naturally
+            }
+        }
+
+    }
+}

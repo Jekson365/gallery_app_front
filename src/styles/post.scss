@@ -1,0 +1,117 @@
+@import './config.scss';
+
+.post-content {
+    .date {
+        color: $color-primary;
+        opacity: 0.6;
+    }
+
+    .counter {
+        color: white;
+    }
+
+    .author {
+        background-color: $color-primary;
+        font-size: 17px;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+
+    .title {
+        color: $color-primary;
+        font-size: 25px;
+    }
+
+    .des-title {
+        font-size: 13px;
+        font-weight: bold;
+        color: $color-primary !important;
+    }
+
+    .description {
+        color: $color-primary;
+    }
+}
+
+.post-image {
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover .like {
+        opacity: 1;
+    }
+
+    .like {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: 0.3s;
+        opacity: 0;
+        transform: translate(-50%, 0);
+
+    }
+}
+.liked {
+    opacity: 1 !important;
+}
+.formats {
+    .format {
+        opacity: 0.7;
+        color: $color-primary;
+    }
+}
+
+.like-icon {
+    font-size: 30px !important;
+    opacity: 0.5;
+    color: $color-primary;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 1;
+        color: $color-primary !important;
+    }
+}
+
+.properties {
+    .title {
+        font-size: 21px;
+        font-weight: bold;
+        color: $color-primary;
+    }
+    .description {
+        color: $color-primary;
+        font-size: 15px;
+        opacity: 0.9;
+        line-height: 20px;
+    }
+    span {
+        font-weight: bold;
+    }
+    .model {
+        color: $color-primary;
+    }
+    .camera {
+        color: $color-primary;
+    }
+    .location {
+        color: $color-primary;
+    }
+}
+
+
+.cat-select {
+    border:1px solid $color-primary;
+    &:hover {
+        border:1px solid $color-primary !important;
+        outline: 1px solid $color-primary !important;
+    }
+}
